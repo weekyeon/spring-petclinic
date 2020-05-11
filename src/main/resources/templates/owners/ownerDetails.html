@@ -26,6 +26,11 @@
         <th>Telephone</th>
         <td th:text="*{telephone}" /></td>
       </tr>
+        <!--weekyeon Owner Age 상세 조회 페이지에 추가-->
+      <tr>
+        <th>Age</th>
+        <td th:text="*{age}" /></td>
+      </tr>
     </table>
   
     <a th:href="@{{id}/edit(id=${owner.id})}" class="btn btn-default">Edit
