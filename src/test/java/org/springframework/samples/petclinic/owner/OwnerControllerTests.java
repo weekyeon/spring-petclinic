@@ -51,6 +51,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(OwnerController.class)
 class OwnerControllerTests {
 
+    //weekyeon Bean
+
+    //얘는 빈 X
+    //OwnerController ownerController = new OwnerController();
+
+    //얘는 빈
+    //OwnerController bean = applicationContext.getBean(OwnerController.class);
+
 	private static final int TEST_OWNER_ID = 1;
 
 	@Autowired

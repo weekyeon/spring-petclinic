@@ -39,11 +39,44 @@ import java.util.Map;
 @Controller
 class OwnerController {
 
+    //weekyeon IoC
+    /*
+        IoC :
+            OwnerController라는 클래스가 있다.
+            OwnerController 생성자에 OwnerRepo~를
+            클리닉 서비스라는 이름으로 받아온 다음에
+            디스에 오너스라는 레퍼런스 변수에 설정해주고 있음
+            즉, 생성자를 통해 오너리파짓토리를 받아오는 것
+
+    * */
 	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
 
 	private final OwnerRepository owners;
 
 	private VisitRepository visits;
+
+	//weekyeon OwnerController에 PetRepository 주입하기
+    /*
+        //1. 필드 이용하여 주입
+        //이 인스턴스를 무조건 여기에 만들어야 하므로 final 키워드 사용하면 안됨
+        @Autowired
+        private PetRepository petRepository;
+
+        //2. 생성자 이용하여 주입
+        //final을 붙이는 이유
+        //한 번 받은 다음에 다른 레퍼런스로 바뀌지 않게끔 보장하기 위함
+        private final PetRepository petRepository;
+        public OwnerController(PetRepository petRepository){
+            this.petRepository = petRepository;
+        }
+
+        //3.Setter 이용하여 주입
+        private  PetRepository petRepository;
+        @Autowired
+        public void setPetRepository(PetRepository petRepository){
+            this.petRepository = petRepository;
+        }
+     */
 
 	public OwnerController(OwnerRepository clinicService, VisitRepository visits) {
 		this.owners = clinicService;
